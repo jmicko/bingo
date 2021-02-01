@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
+
+import './PlayPage.css'
 
 
 
@@ -8,9 +12,11 @@ class PlayPage extends React.Component {
     return (
       <div>
         <p>Let's play BINGO!</p>
+        <div className="board">
+        </div>
       </div>
     )
   }
 }
 
-export default PlayPage;
+export default connect(mapStoreToProps)(PlayPage);
