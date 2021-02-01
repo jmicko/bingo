@@ -13,7 +13,7 @@ class PlayPage extends React.Component {
     numberList: []
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.makeNumbers();
   }
 
@@ -32,13 +32,19 @@ class PlayPage extends React.Component {
   render() {
     return (
       <div>
+        <center>
         <p>Let's play BINGO!</p>
+        </center>
         <div className="board">
-          <p className="bingo">BINGO</p>
+          <div className="bingo square">
+            <p>BINGO</p>
+          </div>
           {
-            this.state.numberList.map((number) => {
-              return(
-                <p>{number}</p>
+            this.state.numberList.map((number, i) => {
+              return (
+                <div className="number square" key={i}>
+                  <p>{number}</p>
+                </div>
               )
             })
           }
