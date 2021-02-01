@@ -34,6 +34,7 @@ class PlayPage extends React.Component {
       <div>
         <p>Let's play BINGO!</p>
         <div className="board">
+          <p className="bingo">BINGO</p>
           {
             this.state.numberList.map((number) => {
               return(
