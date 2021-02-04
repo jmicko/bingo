@@ -14,20 +14,10 @@ class PlayPage extends React.Component {
   };
 
   componentDidMount() {
-    this.makeNumbers();
+
   }
 
-  makeNumbers = () => {
-    const number = [];
-    for (let i = 0; i < 48; i++) {
-      let rand = Math.floor(Math.random() * 100) + 1;
-      number.push(rand)
-      console.log(number);
-    }
-    this.setState({
-      numberList: number
-    })
-  }
+
 
   render() {
     return (
