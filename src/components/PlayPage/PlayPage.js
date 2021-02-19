@@ -12,8 +12,9 @@ class PlayPage extends React.Component {
   state = {
     numberList: []
   };
-
+  
   componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_NUMBERS' });
   }
   
   newCard = () => {
@@ -42,15 +43,17 @@ class PlayPage extends React.Component {
           <div className="bingo square">
             <p>BINGO</p>
           </div>
-          {
+            {this.props.store.numbers.numbers &&
+          
             this.props.store.numbers.numbers.map((number, i) => {
               return (
                 <div className="number square" key={i}>
-                  <p>{number}</p>
+                <p>{number}</p>
                 </div>
-              )
-            })
-          }
+                )
+              })
+          
+            }
         </div>
       </div>
     )

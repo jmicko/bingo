@@ -5,8 +5,16 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     console.log('=======IN GET ROUTE')
+    const queryText = `SELECT "card_numbers" FROM "cards" WHERE "user_id"=$1 ORDER BY "id" DESC LIMIT 1;`
+    pool.query(queryText, [req.user.id])
         .then((result) => {
-            console.log(result);
+            if (result.rowCount !== 0) {
+                console.log("&&&&&&&&& THE RESULT IS", result.rowCount);
+                console.log(result.rows[0].card_numbers);
+                res.send(result.rows[0].card_numbers)
+            } else{
+                res.send(false)
+            }
         })
         .catch((err) => {
             console.log('numbers GET failed: ', err);
@@ -14,7 +22,7 @@ router.get('/', (req, res) => {
         });
 })
 
-router.put('/', (req, res) => {
+router.post('/', (req, res) => {
     // start an array to store the numbers
     const numberList = [];
     // make 48 numbers
@@ -28,7 +36,7 @@ router.put('/', (req, res) => {
     const queryText = `INSERT INTO "public"."cards"("user_id", "card_numbers") VALUES($1, $2) RETURNING "id", "user_id", "card_numbers";`
     pool.query(queryText, [req.user.id, numberList])
         .then((result) => {
-            console.log(result.rows[0].card_numbers);
+            // console.log(result.rows[0].card_numbers);
             res.send(result.rows[0].card_numbers)
         })
         .catch((err) => {
