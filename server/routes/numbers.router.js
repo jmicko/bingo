@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    console.log('=======IN GET ROUTE')
+    // console.log('=======IN GET ROUTE')
     const queryText = `SELECT "card_numbers" FROM "cards" WHERE "user_id"=$1 ORDER BY "id" DESC LIMIT 1;`
     pool.query(queryText, [req.user.id])
         .then((result) => {
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     // start an array to store the numbers
     const numberList = [];
     // make 48 numbers
-    for (let i = 0; i < 48; i++) {
+    for (let i = 0; i < 24; i++) {
         // make a random number between 1, 100
         let rand = Math.floor(Math.random() * 100) + 1;
         // push the new number into the array
