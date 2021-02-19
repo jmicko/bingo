@@ -1,5 +1,5 @@
-import { number } from 'prop-types';
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
@@ -14,16 +14,24 @@ class PlayPage extends React.Component {
   };
 
   componentDidMount() {
+  }
+  
+  newCard = () => {
+    console.log("getting a new card");
     this.props.dispatch({ type: 'UPDATE_NUMBERS' });
   }
-
 
 
   render() {
     return (
       <div>
+        <p>
+          {JSON.stringify(this.props.store)}
+        </p>
         <div>
-          <button>
+          <button
+          onClick={() => this.newCard()}
+          >
             new card
           </button>
         </div>
@@ -35,7 +43,7 @@ class PlayPage extends React.Component {
             <p>BINGO</p>
           </div>
           {
-            this.state.numberList.map((number, i) => {
+            this.props.store.numbers.numbers.map((number, i) => {
               return (
                 <div className="number square" key={i}>
                   <p>{number}</p>

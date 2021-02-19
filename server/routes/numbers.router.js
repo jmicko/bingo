@@ -24,12 +24,12 @@ router.put('/', (req, res) => {
         // push the new number into the array
         numberList.push(rand)
     }
-    console.log(numberList);
+    // console.log(numberList);
     const queryText = `INSERT INTO "public"."cards"("user_id", "card_numbers") VALUES($1, $2) RETURNING "id", "user_id", "card_numbers";`
     pool.query(queryText, [req.user.id, numberList])
         .then((result) => {
-            console.log(result.rows);
-            res.send(result.rows)
+            console.log(result.rows[0].card_numbers);
+            res.send(result.rows[0].card_numbers)
         })
         .catch((err) => {
             console.log('numbers GET failed: ', err);
