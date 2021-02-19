@@ -35,8 +35,16 @@ p{
     background-color: rgb(36, 36, 36);
 }
 
+.picked:hover{
+    background-color: rgb(17, 17, 17);
+}
+
 .unpicked {
     background-color: rgb(73, 73, 73);
+}
+
+.unpicked:hover {
+    background-color: rgb(63, 63, 63);
 }
 
 .bingo p{
