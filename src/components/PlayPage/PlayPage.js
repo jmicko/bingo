@@ -14,7 +14,7 @@ class PlayPage extends React.Component {
   };
 
   componentDidMount() {
-
+    this.props.dispatch({ type: 'UPDATE_NUMBERS' });
   }
 
 
@@ -22,6 +22,11 @@ class PlayPage extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <button>
+            new card
+          </button>
+        </div>
         <center>
         <p>Let's play BINGO!</p>
         </center>
