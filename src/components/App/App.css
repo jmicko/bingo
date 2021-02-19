@@ -1,12 +1,13 @@
-html,
-body,
-#react-root {
+html, body, #react-root {
   height: 100%;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  margin: 0px;
+  color: #f8f8f8;
+  background-color: #3b3b3b;
 }
 
 img {
@@ -20,6 +21,13 @@ Container
 
 .container {
   padding: 20px;
+  max-width: 60rem;
+  margin: auto;
+}
+
+.box {
+  width: max-content;
+  margin: auto;
 }
 
 /* --------------------------------------------------------------------------------
@@ -29,11 +37,11 @@ Button
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  border-color: #014041;
+  border-color: #6b6b6b;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
   color: #f8f8f8;
+  background-color: #2b2b2b;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
@@ -55,25 +63,62 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #242424;
   text-decoration: none;
 }
 
+.btn:active {
+  border-width: 3px 1px 1px;
+}
+
 /* This line makes the "Register" and "Login" buttons look like links */
+
 .btn_asLink {
   padding: 0;
   border-width: 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #16e4d9;
   border-radius: 0;
   background: none;
   font: inherit;
-  color: #444;
+  color: #16e4d9;
 }
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #55928f;
+  color: #242424;
+}
+
+.btn-delete {
+  float: right;
+  /* background-color: #b80b0b; */
+  /* background-color: #5f1313; */
+  color: #f31d1d;
+}
+
+/* --------------------------------------------------------------------------------
+Menus
+-------------------------------------------------------------------------------- */
+
+.menu-hz-btn {
+  /* height: 100%; */
+  margin: .125rem;
+  display: inline;
+  /* float: left; */
+}
+
+.menu-hz {
+  margin: auto;
+  margin-top: 1rem;
+  width: max-content;
+}
+
+.menu-active {
+  background-color: rgb(134, 134, 134);
+}
+
+.menu-active:hover {
+  background-color: rgb(104, 104, 104);
 }
 
 /* --------------------------------------------------------------------------------
@@ -97,11 +142,23 @@ Form Treatment
 
 .formPanel {
   box-sizing: border-box;
-  width: 400px;
+  /* width: 400px; */
+  width: max-content;
+  max-width: 100%;
+  padding: 25px;
+  margin: 1rem auto;
+  background-color: #525252;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+}
+
+.editPanel {
+  box-sizing: border-box;
+  width: 1100px;
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: #525252;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
 }
@@ -109,4 +166,83 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+/* --------------------------------------------------------------------------------
+General Theme
+-------------------------------------------------------------------------------- */
+
+.metal {
+  /* box-shadow: 1px 2px 6px 0px rgba(163, 163, 163, 0.83); */
+  padding: 1rem;
+  color: #efefef;
+  background-color: #3b3b3b;
+  /* width: max-content; */
+}
+
+.night {
+  padding: 1rem;
+  color: #efefef;
+  background-color: #131313;
+}
+
+.rounded {
+  border-radius: .5rem;
+}
+
+.notched {
+  /* css for notched corners taken from https://css-tricks.com/notched-boxes/ */
+  /* this variable is the size of the notch */
+  --notchSize: 1rem;
+  /* clip-path shows whatever is inside the specified region. Everything else is hidden */
+  clip-path: /* the region is a polygon. 8 points are defined, one for each corner */
+  polygon( 0% var(--notchSize), var(--notchSize) 0%, /* to keep corner sizes the same, the position is calculated as the 
+      difference between the notch size (1rem), and the total length of the 
+      side our point is on */
+  calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+  /* 1rem of padding to more than account for the size of the notch */
+  padding: 1rem;
+}
+
+.divider {
+  border-bottom: #f56f34 1px solid;
+}
+
+.flex {
+  display: flex;
+}
+
+/* --------------------------------------------------------------------------------
+Headers
+-------------------------------------------------------------------------------- */
+
+.bigHeader {
+  font-size: 3.5rem;
+  margin: auto;
+}
+
+.highlighter {
+  /* width: max-content; */
+  /* background-color: #b3481d; */
+  background: linear-gradient(90deg, #252525 0%, #2e2e2e 75%, #3b3b3b00 100%);
+  /* background: linear-gradient(90deg, #d67951 0%, #994d2c 75%, #3b3b3b00 100%); */
+  border-bottom-left-radius: .4rem;
+  border-top-left-radius: .4rem;
+}
+
+.highlighter h2 {
+  margin-left: .75rem;
+  margin-right: 33%;
+  width: max-content;
+}
+
+.highlighter p {
+  margin-left: .75rem;
+  margin-right: 33%;
+  width: max-content;
+}
+
+.light {
+  color: black;
+  background: linear-gradient(90deg, #999999 0%, #999999 75%, #3b3b3b00 100%);
 }
