@@ -67,3 +67,4 @@ typings/
 # ignore package-lock as it complicates merging
 package-lock.json
 notes.md
+.vscode/settings.json
