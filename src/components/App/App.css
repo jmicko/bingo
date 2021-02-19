@@ -259,3 +259,7 @@ Headers
 .glow {
   box-shadow: 0px 0px 1000px 1px #5b8583;
 }
+
+.title {
+  color: #a7a7a7;
+}
