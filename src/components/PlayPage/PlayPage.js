@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import NumberSquare from '../NumberSquare/NumberSquare'
 
 import './PlayPage.css'
 
@@ -42,16 +43,16 @@ class PlayPage extends React.Component {
         <div
           className="box metal notched">
           <div className="board rounded">
-            <div className="bingo square rounded">
+            <div className="bingo square rounded picked">
               <p>BINGO</p>
             </div>
             {this.props.store.numbers.numbers &&
 
               this.props.store.numbers.numbers.map((number, i) => {
                 return (
-                  <div className="square" key={i}>
-                    <p>{number}</p>
-                  </div>
+                  <NumberSquare
+                  key={i} 
+                  number={number}/>
                 )
               })
 
