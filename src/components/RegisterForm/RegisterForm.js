@@ -28,8 +28,10 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <form className="formPanel" onSubmit={this.registerUser}>
-        <h2>Register User</h2>
+      <form className="formPanel driftwood glow" onSubmit={this.registerUser}>
+        <div className="highlighter">
+          <h2 className="">Register User</h2>
+        </div>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
             {this.props.store.errors.registrationMessage}
