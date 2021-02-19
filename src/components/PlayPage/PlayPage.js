@@ -26,9 +26,6 @@ class PlayPage extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          {JSON.stringify(this.props.store)}
-        </p>
         <div>
           <button
           onClick={() => this.newCard()}
