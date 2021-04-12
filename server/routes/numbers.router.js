@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
         numberList.push(rand)
     }
     // console.log(numberList);
-    const queryText = `INSERT INTO "public"."cards"("user_id", "card_numbers") VALUES($1, $2) RETURNING "id", "user_id", "card_numbers";`
+    const queryText = `INSERT INTO "cards"("user_id", "card_numbers") VALUES($1, $2) RETURNING "id", "user_id", "card_numbers";`
     pool.query(queryText, [req.user.id, numberList])
         .then((result) => {
             // console.log(result.rows[0].card_numbers);

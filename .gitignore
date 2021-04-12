@@ -68,3 +68,4 @@ typings/
 package-lock.json
 notes.md
 .vscode/settings.json
+server/modules/pool.js
