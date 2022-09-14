@@ -1,5 +1,5 @@
 -- Drop existing tables to start fresh
-DROP TABLE IF EXISTS "user", "cards", CASCADE;
+DROP TABLE IF EXISTS "user", "cards";
 
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
