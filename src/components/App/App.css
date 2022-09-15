@@ -237,6 +237,13 @@ Headers
   margin: auto;
 }
 
+@media (max-width: 800px) {
+  .bigHeader {
+    font-size: x-large;
+  }
+
+}
+
 .highlighter {
   /* width: max-content; */
   /* background-color: #b3481d; */

@@ -1,58 +1,83 @@
-.board{
-    background-color: aqua;
-    display: grid;
-    grid-template-columns: repeat(5, 5rem);
-    grid-template-rows: repeat(5, 5rem);
-    gap: .5rem;
-    border: .5rem aqua solid;
-    width: fit-content;
+.board {
+  background-color     : aqua;
+  display              : grid;
+  grid-template-columns: repeat(5, 5rem);
+  grid-template-rows   : repeat(5, 5rem);
+  gap                  : .5rem;
+  border               : .5rem aqua solid;
+  width                : fit-content;
+  margin               : auto;
+}
+
+@media (max-width: 800px) {
+  .board {
+    background-color     : aqua;
+    display              : grid;
+    grid-template-columns: repeat(5, 14vw);
+    grid-template-rows   : repeat(5, 14vw);
+    gap                  : .5rem;
+    border               : .5rem aqua solid;
+    /* width                : max-content; */
+    max-width            : 100%;
+    margin               : auto;
+  }
+
+  .board-border {
+    max-width: 91%;
     margin: auto;
+    width: max-content;
+  }
+
+  .bingo.square{
+    font-size: small;
+  }
+
 }
 
-p{
-    display: inline-block;
-    line-height: normal;
-    /* margin: 0; */
-    height: min-content;
-    /* justify-self: center; */
-    vertical-align: middle;
-    margin: 1.2rem auto;
+p {
+  display        : inline-block;
+  line-height    : normal;
+  /* margin      : 0; */
+  height         : min-content;
+  /* justify-self: center; */
+  vertical-align : middle;
+  margin         : 1.2rem auto;
 }
 
-.square{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    justify-self: center;
-    align-self: center;
-    text-align: center;
-    font-size: 2rem;
+.square {
+  /* display        : flex; */
+  /* justify-content: center; */
+  width          : 100%;
+  height         : 100%;
+  border         : 1px solid black;
+  justify-self   : center;
+  align-self     : center;
+  text-align     : center;
+  font-size      : 2rem;
 }
 
-.picked{
-    background-color: rgb(36, 36, 36);
+.picked {
+  background-color: rgb(36, 36, 36);
 }
 
-.picked:hover{
-    background-color: rgb(17, 17, 17);
+.picked:hover {
+  background-color: rgb(17, 17, 17);
 }
 
 .unpicked {
-    background-color: rgb(73, 73, 73);
+  background-color: rgb(73, 73, 73);
 }
 
 .unpicked:hover {
-    background-color: rgb(63, 63, 63);
+  background-color: rgb(63, 63, 63);
 }
 
-.bingo p{
-    padding-top: .3rem;
+.bingo p {
+  padding-top: .3rem;
 }
 
-.bingo{
-    grid-row: 3;
-    grid-column: 3;
-    font-size: 1.5rem;
+.bingo {
+  grid-row   : 3;
+  grid-column: 3;
+  font-size  : 1.5rem;
 }
