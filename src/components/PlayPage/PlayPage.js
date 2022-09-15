@@ -29,19 +29,10 @@ class PlayPage extends React.Component {
       <div
         className="rounded container night">
         <center className="notched metal box">
-          <p className="bigHeader">Let's play BINGO!</p>
+          <h1 className="bigHeader">Let's play BINGO!</h1>
         </center>
-        <div
-          className="menu-hz">
-          <button
-            className="btn menu-hz-btn"
-            onClick={() => this.newCard()}
-          >
-            new card
-          </button>
-        </div>
-        <div
-          className="box metal notched">
+        <p></p>
+        <div className="board-border box metal notched">
           <div className="board rounded">
             <div className="bingo square rounded picked">
               <p>BINGO</p>
@@ -51,13 +42,21 @@ class PlayPage extends React.Component {
               this.props.store.numbers.numbers.map((number, i) => {
                 return (
                   <NumberSquare
-                  key={i} 
-                  number={number}/>
+                    key={i}
+                    number={number} />
                 )
               })
 
             }
           </div>
+        </div>
+        <div className="menu-hz">
+          <button
+            className="btn menu-hz-btn"
+            onClick={() => this.newCard()}
+          >
+            new card
+          </button>
         </div>
       </div>
     )

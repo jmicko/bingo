@@ -30,6 +30,14 @@ Container
   margin: auto;
 }
 
+@media (max-width: 800px) {
+  .container {
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
 /* --------------------------------------------------------------------------------
 Button
 -------------------------------------------------------------------------------- */
@@ -227,6 +235,13 @@ Headers
 .bigHeader {
   font-size: 3.5rem;
   margin: auto;
+}
+
+@media (max-width: 800px) {
+  .bigHeader {
+    font-size: x-large;
+  }
+
 }
 
 .highlighter {

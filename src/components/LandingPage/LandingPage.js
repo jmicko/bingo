@@ -18,25 +18,28 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>{this.state.heading}</h2>
+      <div className="container landing">
 
-        <div className="grid">
-          <div className="grid-col grid-col_8">
-            <p>
-              Everybody needs some BINGO in their life!
-            </p>
-          </div>
-          <div className="grid-col grid-col_4">
-            <RegisterForm />
+        {/* <div className=""> */}
+        <div className="landing-intro">
+          <h2>{this.state.heading}</h2>
+          <p>
+            Everybody needs some BINGO in their life!
+          </p>
+        </div>
 
-            <center>
-              <h4>Already a Member?</h4>
-              <button className="btn btn_sizeSm" onClick={this.onLogin}>
-                Login
-              </button>
-            </center>
-          </div>
+        {/* LOGIN STUFF */}
+        <div className="landing-login">
+          <RegisterForm />
+
+          <center>
+            <h4>Already a Member?</h4>
+            <button className="btn btn_sizeSm" onClick={this.onLogin}>
+              Login
+            </button>
+          </center>
+
+          {/* </div> */}
         </div>
       </div>
     );
