@@ -30,9 +30,9 @@ if (process.env.DATABASE_URL) {
   config = {
     user: process.env.PGUSER,
     password: process.env.PGPASSWORD,
-    host: 'localhost', // Server hosting the postgres database
-    port: 5432, // env var: PGPORT
-    database: 'bingo', // CHANGE THIS LINE if you happen to have another bingo project in the works with that db name
+    host: process.env.PGHOST || 'localhost', // Server hosting the postgres database. Assuming locally hosted database if none specified.
+    port: process.env.PGPORT || 5432, // env var: PGPORT
+    database: process.env.PGDATABASE || 'bingo', // env var: PGDATABASE
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
   };
